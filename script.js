@@ -28,6 +28,7 @@ $(document).ready(function() {
    let filaCarrito = $('#carrito tbody').find(`tr:contains(${nombre})`);
 
    //4. Si el producto ya está en el carrito
+
    if(filaCarrito.length > 0){
     //buscamos la celda que contiene la cantidad , en el segundo <td> cantidad
     //eq(1) selecciona el segundo <td>(indice 1) donde tenemos la cantidad en la tabla
@@ -65,5 +66,12 @@ $(document).ready(function() {
 
         $('#carrito tbody').append(nuevaFila); //añadir el producto al final de tbody 
    }
+
+  
 });
+
+$('#carrito').on('click', '.eliminar-producto', function(){
+   let productRow = $(this).parent().parent();
+   productRow.remove();
+} );
 })

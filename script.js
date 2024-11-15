@@ -67,11 +67,33 @@ $(document).ready(function() {
         $('#carrito tbody').append(nuevaFila); //añadir el producto al final de tbody 
    }
 
+   actualizarTotal();
+
   
 });
 
 $('#carrito').on('click', '.eliminar-producto', function(){
    let productRow = $(this).parent().parent();
    productRow.remove();
+   actualizarTotal();
 } );
-})
+
+
+
+function actualizarTotal(){
+    let total = 0;
+
+    $('#carrito tbody tr').each( function() {
+        let subtotal = parseFloat($(this).find('td').eq(2).text());
+        total +=subtotal;
+    });
+
+    //actualizar el total en la interfaz
+    $('#total-pagar').text(total.toFixed(2));
+}
+
+
+
+
+});
+

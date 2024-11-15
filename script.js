@@ -78,6 +78,12 @@ $('#carrito').on('click', '.eliminar-producto', function(){
    actualizarTotal();
 } );
 
+$('#vaciar-carrito').on('click', function(){
+    $('#carrito tbody').empty(); //vacía el contenido del tbody en la tabla
+
+    //reinicia el total a pagar a 0
+    actualizarTotal();
+});
 
 
 function actualizarTotal(){

@@ -14,11 +14,58 @@ $(document).ready(function(){
        let nombre = divProducto.find('.nombre').text();
 
        //hacer lo mismo con precio
-       let precio = parseFloat(divProducto.find('.precio').text());
+       let precio = parseFloat(divProducto.find('.precio').text().replace('$', ''));
 
        //3. Comprobar que el producto ya existe en el carrito 
-       
-       
+       // si el carrito ya tiene una fila con el nombre del producto
+       // seleccionamos el elemento tbody de la tabla del carrito con id 'carrito'
+       // para buscar filas (`tr`) que ya tengan el nombre del producto.
+       // utilizamos contains(nombre) para buscar en las filas cualquier texto que coindida con el nombre
+       let filaCarrito = $('#carrito tbody').find(`tr:contains(${nombre})`);
 
-    })
+       // 4. Si el producto ya está en el carrito 
+       if(filaCarrito.length > 0){
+        //buscamos la celda que cntiene la cantidad , en el sergundo <td>
+        //eq(1) selecciona el segundo ztd> (indice 1) donde está la cantidad
+
+        let cantidadActual = parseInt(filaCarrito.find('td').eq(1).text());
+
+        //aumentamos en 1 la cantidad
+        cantidadActual += 1;
+
+        
+    //actualizar el contenido de la cantidad mediante text()
+    filaCarrito.find('td').eq(1).text(cantidadActual);
+    
+        //actualizar el contenido de la cantidad mediante text()
+        let nuevoSubTotal = cantidadActual * precio;
+
+        filaCarrito.find('td').eq(2).text(nuevoSubTotal);
+       }else{
+        //si el productio no está en el carrito , lo añadimos con una nueva fila <tr>
+        let nuevaFila = $(`
+            <tr>
+                <td>${nombre}</td>
+                <td>1</td>
+                <td>${precio}</td>
+                <td><button class="eliminar-producto">Eliminar</button></td>
+            </tr>
+            `);
+
+            $('#carrito tbody').append(nuevaFila);
+
+       }
+
+    });
+
+  $('#carrito').on('click', '.eliminar-producto', function(){
+    let productoFila = $(this).parent().parent(); //el padre de button es <td> y el padre de <td> el <tr>
+    productoFila.remove();
+  });
+
+    $('#vaciar-carrito').on('click', function(){
+        $('#carrito tbody').empty(); //vacía el contenido del tbody en la tabla
+    });
+
+
 })

@@ -36,7 +36,7 @@ $(document).ready(function(){
         
     //actualizar el contenido de la cantidad mediante text()
     filaCarrito.find('td').eq(1).text(cantidadActual);
-    
+
         //actualizar el contenido de la cantidad mediante text()
         let nuevoSubTotal = cantidadActual * precio;
 
@@ -56,16 +56,29 @@ $(document).ready(function(){
 
        }
 
+       actualizarTotal();
     });
 
   $('#carrito').on('click', '.eliminar-producto', function(){
     let productoFila = $(this).parent().parent(); //el padre de button es <td> y el padre de <td> el <tr>
     productoFila.remove();
+    actualizarTotal();
   });
 
     $('#vaciar-carrito').on('click', function(){
         $('#carrito tbody').empty(); //vacía el contenido del tbody en la tabla
+        actualizarTotal();
     });
 
+
+    function actualizarTotal(){
+        let total = 0;
+        $('#carrito tbody tr').each(function(){ //por cada fila de la tabla (tbody tr)
+            let subtotal = parseFloat($(this).find('td').eq(2).text()); //equivale3nte a precio
+            total +=subtotal;
+        });
+        //actualizar el total en la interfaz
+        $('#total').text(total.toFixed(2));
+    }
 
 })

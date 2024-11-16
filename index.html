@@ -25,21 +25,33 @@
       </div>
       <button class="agregar-carrito">Agregar</button>
     </div>
+
     <div class="producto">
-        <img src="img/a6abdc10fe077ca448f9591c4f9e8462-removebg-preview.png" alt="Producto 3" class="imagen-producto">
-        <div class="detalles">
-          <p class="nombre">Producto 3</p>
-          <p class="precio">$200</p>
-        </div>
-        <button class="agregar-carrito">Agregar</button>
+      <img src="img/a6abdc10fe077ca448f9591c4f9e8462-removebg-preview.png" alt="Producto 3" class="imagen-producto">
+      <div class="detalles">
+        <p class="nombre">Producto 3</p>
+        <p class="precio">$200</p>
       </div>
+      <button class="agregar-carrito">Agregar</button>
+    </div>
   </div>
 
+  <!-- Carrito de compras en formato de tabla -->
   <div id="carrito-container">
     <h2>Tu Carrito</h2>
-    <div id="carrito">
-      <!-- Productos añadidos aparecerán aquí -->
-    </div>
+    <table id="carrito">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Subtotal</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Los productos añadidos aparecerán aquí -->
+      </tbody>
+    </table>
     <button id="vaciar-carrito">Vaciar carrito</button>
     <p id="total">Total: $0</p>
   </div>

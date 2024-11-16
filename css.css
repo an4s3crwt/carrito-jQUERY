@@ -78,4 +78,90 @@
       grid-template-columns: 1fr;
     }
   }
+/* Estilo para el contenedor del carrito */
+#carrito-container {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 400px;
+  }
+  
+  /* Título del carrito */
+  #carrito-container h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Contenedor de los productos en el carrito */
+  #carrito {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Estilo para cada producto en el carrito */
+  #carrito .producto-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Nombre y precio de cada producto */
+  #carrito .producto-carrito .nombre {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  #carrito .producto-carrito .precio {
+    color: #555;
+  }
+  
+  /* Botón de eliminar producto */
+  #carrito .producto-carrito .eliminar {
+    background-color: #f44336;
+    color: #fff;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  #carrito .producto-carrito .eliminar:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Estilo para el botón "Vaciar carrito" */
+  #vaciar-carrito {
+    background-color: #000;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  #vaciar-carrito:hover {
+    background-color: #333;
+  }
+  
+  /* Estilo para el total */
+  #total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #333;
+  }
   

@@ -30,7 +30,7 @@ El proyecto está compuesto por tres archivos principales:
 
 1. Clona este repositorio o descarga los archivos:
 
-git clone https://github.com/an4s3crwt/carrito-jQUERY.git
+    git clone https://github.com/an4s3crwt/carrito-jQUERY.git
 
 2. Abre el archivo index.html en tu navegador para ver el carrito de compras en acción.
 

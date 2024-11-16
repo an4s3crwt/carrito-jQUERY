@@ -1,3 +1,22 @@
+
+
+body {
+  font-family:  'Helvetica', 'Arial', sans-serif!important;
+  font-weight: 900!important; /* Extra negrita */
+  text-transform: uppercase!important;
+
+}
+
+button {
+  font-family: 'Helvetica', 'Arial', sans-serif; /* Fuente moderna */
+  font-weight: 700; /* Negrita */
+  text-transform: uppercase; /* Mayúsculas */
+  letter-spacing: 1px; /* Espaciado */
+ 
+  
+  cursor: pointer; /* Indicador de clic */
+ 
+}
 /* Contenedor de productos */
 #productos {
     display: grid;
@@ -166,7 +185,7 @@
   }
   :root {
     --color-bg: #f9f9f9;
-    --color-bg-hover: #eaeaea;
+    --color-bg-hover: #f5f0f0;
     --color-text: #333;
     --color-accent: #007bff;
     --color-danger: #342525;
@@ -208,4 +227,5 @@ button.eliminar-producto {
 button.eliminar-producto:hover {
     background-color: rgb(36, 31, 31);
 }
+
 

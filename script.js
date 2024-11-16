@@ -44,10 +44,10 @@ $(document).ready(function(){
        }else{
         //si el productio no está en el carrito , lo añadimos con una nueva fila <tr>
         let nuevaFila = $(`
-            <tr>
+            <tr class="fila-producto">
                 <td>${nombre}</td>
                 <td>1</td>
-                <td>${precio}</td>
+                <td>$${precio}</td>
                 <td><button class="eliminar-producto">Eliminar</button></td>
             </tr>
             `);

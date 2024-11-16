@@ -1,58 +1,49 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras</title>
-    <link rel="stylesheet" href="css.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito Animado</title>
+  <link rel="stylesheet" href="css.css">
 </head>
 <body>
-    <h1>Carrito de Compras</h1>
-    
-    <!-- Lista de productos -->
-    <div id="productos">
-        <h2>Productos Disponibles</h2>
-        <div class="producto">
-            <span class="nombre">Producto 1</span> - 
-            <span class="precio">10</span>
-            <button class="agregar-carrito">Agregar al carrito</button>
-        </div>
-        <div class="producto">
-            <span class="nombre">Producto 2</span> - 
-            <span class="precio">15</span>
-            <button class="agregar-carrito">Agregar al carrito</button>
-        </div>
-        <div class="producto">
-            <span class="nombre">Producto 3</span> - 
-            <span class="precio">20</span>
-            <button class="agregar-carrito">Agregar al carrito</button>
-        </div>
+  <div id="productos">
+    <div class="producto">
+      <img src="img/53b25246008bd9d91fdc4f5d3ab1d484-removebg-preview.png" alt="Producto 1" class="imagen-producto">
+      <div class="detalles">
+        <p class="nombre">Producto 1</p>
+        <p class="precio">$10</p>
+      </div>
+      <button class="agregar-carrito">Agregar</button>
     </div>
 
-    <!-- Carrito -->
-    <h2>Carrito de Compras</h2>
-    <table id="carrito">
-        <thead>
-            <tr>
-                <th>Producto</th>
-                <th>Cantidad</th>
-                <th>Precio Unitario</th>
-                <th>Total</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Las filas de productos se agregarán aquí -->
-        </tbody>
-    </table>
-    <button id="vaciar-carrito">Vaciar Carrito</button>
-
-    <!-- Total a pagar -->
-    <div id="total">
-        <h3>Total a Pagar: $<span id="total-pagar">0.00</span></h3>
+    <div class="producto">
+      <img src="img/8a60f3cb57cba934c70bf172915bf319-removebg-preview.png" alt="Producto 2" class="imagen-producto">
+      <div class="detalles">
+        <p class="nombre">Producto 2</p>
+        <p class="precio">$20</p>
+      </div>
+      <button class="agregar-carrito">Agregar</button>
     </div>
+    <div class="producto">
+        <img src="img/a6abdc10fe077ca448f9591c4f9e8462-removebg-preview.png" alt="Producto 3" class="imagen-producto">
+        <div class="detalles">
+          <p class="nombre">Producto 3</p>
+          <p class="precio">$200</p>
+        </div>
+        <button class="agregar-carrito">Agregar</button>
+      </div>
+  </div>
 
-    <script src="script.js"></script>
+  <div id="carrito-container">
+    <h2>Tu Carrito</h2>
+    <div id="carrito">
+      <!-- Productos añadidos aparecerán aquí -->
+    </div>
+    <button id="vaciar-carrito">Vaciar carrito</button>
+    <p id="total">Total: $0</p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

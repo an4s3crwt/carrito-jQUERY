@@ -1,0 +1,81 @@
+/* Contenedor de productos */
+#productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  /* Estilo de cada producto */
+  .producto {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Necesario para las animaciones */
+    transition: transform 0.3s ease;
+  }
+  .producto:hover {
+    transform: translateY(-5px);
+  }
+  .producto:focus-within {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .imagen-producto {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .detalles .nombre {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .detalles .precio {
+    color: #555; /* Color monocromático */
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  /* Botón "Agregar" oculto por defecto */
+  .agregar-carrito {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: #000; /* Fondo monocromático negro */
+    color: #fff; /* Texto blanco */
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border: none; /* Sin borde */
+  }
+  
+  /* Contenedor interno para el precio y el botón */
+  .producto:hover .agregar-carrito,
+  .producto:focus-within .agregar-carrito {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  /* Espaciado para evitar que el botón tape el precio */
+  .detalles {
+    margin-bottom: 3rem; /* Espacio para el botón */
+  }
+  
+  /* Layout responsivo */
+  @media (max-width: 768px) {
+    #productos {
+      grid-template-columns: 1fr;
+    }
+  }
+  
